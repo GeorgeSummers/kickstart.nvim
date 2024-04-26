@@ -14,6 +14,12 @@ return {
     { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
+    sources = {
+      "filesystem",
+      "buffers",
+      "document_symbols",
+      "git_status"
+    },
     filesystem = {
       window = {
         mappings = {
@@ -21,5 +27,21 @@ return {
         },
       },
     },
+    source_selector = {
+      winbar = true,
+      statusline = false,
+      sources = {
+        { source = "filesystem" },
+        { source = "buffers" },
+        { source = "document_symbols" },
+        { source = "git_status" }
+      }
+
+  },
+  window = {
+    mappings = {
+      ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
+    }
+  }
   },
 }
